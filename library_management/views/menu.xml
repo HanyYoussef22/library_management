@@ -1,0 +1,31 @@
+<odoo>
+    <!-- Main Root Menu -->
+    <menuitem id="menu_library_root" name="Library" sequence="10"/>
+
+    <!-- Dashboard Menu -->
+    <menuitem id="menu_library_dashboard"
+              name="Dashboard"
+              parent="menu_library_root"
+              sequence="1"/>
+
+    <!-- Configuration Menu -->
+    <menuitem id="menu_library_configuration"
+              name="Configuration"
+              parent="menu_library_root"
+              sequence="2"/>
+
+    <!-- Submenu: Overdue Loans -->
+    <menuitem id="menu_overdue_loans"
+              name="Overdue Loans"
+              parent="menu_library_dashboard"
+              action="library_management.action_overdue_loans"
+              sequence="10"/>
+
+    <!-- Submenu: Top 3 Borrowed Books -->
+    <menuitem id="menu_top_borrowed_books"
+              name="Top 3 Borrowed Books"
+              parent="menu_library_dashboard"
+              action="library_management.action_top_borrowed_books"
+              sequence="20"/>
+
+</odoo>

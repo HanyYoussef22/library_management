@@ -1,0 +1,38 @@
+<odoo>
+  <record id="view_partner_form_inherit_library" model="ir.ui.view">
+    <field name="name">res.partner.form.inherit.library</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_partner_form"/>
+    <field name="arch" type="xml">
+
+      <!-- Library Info Fields -->
+      <xpath expr="//sheet" position="inside">
+        <group string="Library Info">
+          <field name="is_library_member"/>
+          <field name="loan_count" readonly="1"/>
+        </group>
+      </xpath>
+
+      <!-- Smart Button for Loans -->
+      <xpath expr="//div[@name='button_box']" position="inside">
+        <button name="action_view_loans"
+                type="object"
+                class="oe_stat_button"
+                icon="fa-book"
+                modifiers='{"invisible": [["is_library_member", "=", false]]}'>
+          <field name="loan_count" widget="statinfo" string="Loans"/>
+        </button>
+
+        <!-- Smart Button for Loan History Wizard -->
+        <button name="%(library_management.action_member_loan_history_wizard)d"
+                type="action"
+                class="oe_stat_button"
+                icon="fa-history"
+                modifiers='{"invisible": [["is_library_member", "=", false]]}'>
+          <span class="o_stat_text">Loan History</span>
+        </button>
+      </xpath>
+
+    </field>
+  </record>
+</odoo>

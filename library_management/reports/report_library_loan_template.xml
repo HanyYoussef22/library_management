@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_library_loan_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <div class="text-center">
+                        <h2 style="color:#2E86C1; margin-bottom: 20px;"> Library Loan Report</h2>
+                    </div>
+
+                    <t t-foreach="docs" t-as="loan">
+                        <div style="margin: 25px 0; border:1px solid #ccc; padding: 15px; border-radius: 8px;">
+                            <h4 style="color:#117864;"> Member: <span t-field="loan.partner_id"/></h4>
+                            <p><strong> Book:</strong> <span t-field="loan.book_id"/></p>
+                            <p><strong> Borrow Date:</strong> <span t-field="loan.borrow_date"/></p>
+                            <p><strong> Return Date:</strong> <span t-field="loan.return_date"/></p>
+                            <p><strong> Status:</strong> <span t-field="loan.status"/></p>
+                        </div>
+                    </t>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

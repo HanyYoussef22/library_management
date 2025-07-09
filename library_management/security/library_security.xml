@@ -1,0 +1,21 @@
+<odoo>
+    <data noupdate="1">
+        <!-- Group: Librarian Manager -->
+        <record id="group_library_manager" model="res.groups">
+            <field name="name">Librarian Manager</field>
+            <field name="category_id" ref="base.module_category_tools"/>
+        </record>
+
+        <!-- Group: Librarian Employee -->
+        <record id="group_library_employee" model="res.groups">
+            <field name="name">Librarian Employee</field>
+            <field name="category_id" ref="base.module_category_tools"/>
+        </record>
+
+        <!-- Group: Library Member -->
+        <record id="group_library_member" model="res.groups">
+            <field name="name">Library Member</field>
+            <field name="category_id" ref="base.module_category_tools"/>
+        </record>
+    </data>
+</odoo>

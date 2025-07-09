@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Tree View -->
+    <record id="view_library_loan_tree" model="ir.ui.view">
+        <field name="name">library.loan.tree</field>
+        <field name="model">library.loan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="book_id"/>
+                <field name="partner_id"/>
+                <field name="borrow_date"/>
+                <field name="return_date"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_check_overdue_loans_server" model="ir.actions.server">
+        <field name="name">Check Overdue Loans</field>
+        <field name="model_id" ref="model_library_loan"/>
+        <field name="state">code</field>
+        <field name="binding_model_id" ref="model_library_loan"/>
+        <field name="binding_type">action</field>
+        <field name="code">
+            action = env['library.loan'].action_check_overdue_loans()
+        </field>
+    </record>
+
+
+    <!-- Form View -->
+    <record id="view_library_loan_form" model="ir.ui.view">
+        <field name="name">library.loan.form</field>
+        <field name="model">library.loan</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_borrow" type="object" string="Borrow" class="btn-primary"
+                            modifiers="{'invisible': [['state', '!=', 'draft']]}"/>
+                    <button name="action_return" type="object" string="Return" class="btn-success"
+                            modifiers="{'invisible': [['state', '!=', 'borrowed']]}"/>
+                    <button name="action_set_draft" type="object" string="Reset to Draft"
+                            class="btn-secondary"
+                            groups="library_management.group_library_manager"
+                            modifiers="{'invisible': [['state', '=', 'draft']]}"/>
+
+
+                    <button name="%(action_return_book_wizard)d"
+                            type="action"
+                            string="Return via Wizard"
+                            class="btn-secondary"
+                            modifiers="{'invisible': [['state', '!=', 'borrowed']]}"/>
+
+
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,borrowed,returned,overdue"/>
+                </header>
+
+                <sheet>
+                    <group>
+                        <field name="book_id"/>
+                        <field name="partner_id"/>
+                    </group>
+                    <group>
+                        <field name="borrow_date"/>
+                        <field name="return_date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_library_loan_search" model="ir.ui.view">
+        <field name="name">library.loan.search</field>
+        <field name="model">library.loan</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="book_id"/>
+                <field name="partner_id"/>
+                <filter string="Draft" name="draft" domain="[('state','=','draft')]"/>
+                <filter string="Borrowed" name="borrowed" domain="[('state','=','borrowed')]"/>
+                <filter string="Returned" name="returned" domain="[('state','=','returned')]"/>
+                <filter string="Overdue" name="overdue" domain="[('state','=','overdue')]"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_library_loan" model="ir.actions.act_window">
+        <field name="name">Loans</field>
+        <field name="res_model">library.loan</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_library_loan_search"/>
+    </record>
+
+    <!-- Menus -->
+    <menuitem id="menu_library_loans" name="Loans" parent="menu_library_root"/>
+    <menuitem id="menu_library_loans_list" name="All Loans"
+              parent="menu_library_loans"
+              action="action_library_loan"/>
+
+</odoo>

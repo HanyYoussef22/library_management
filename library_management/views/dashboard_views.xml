@@ -1,0 +1,37 @@
+<odoo>
+
+    <!-- Graph View: Top 3 Borrowed Books -->
+    <record id="view_top_books_graph" model="ir.ui.view">
+        <field name="name">Top 3 Borrowed Books</field>
+        <field name="model">library.loan</field>
+        <field name="arch" type="xml">
+            <graph string="Top 3 Borrowed Books" type="bar">
+                <field name="book_id" type="row"/>
+            </graph>
+        </field>
+    </record>
+
+    <!-- Action: Top 3 Borrowed Books -->
+    <record id="action_top_borrowed_books" model="ir.actions.act_window">
+        <field name="name">Top Borrowed Books</field>
+        <field name="res_model">library.loan</field>
+        <field name="view_mode">graph</field>
+        <field name="view_id" ref="view_top_books_graph"/>
+        <field name="context">
+            {
+            "group_by": "book_id",
+            "graph_order": "count:desc"
+            }
+        </field>
+    </record>
+
+
+    <!-- Action: Overdue Loans (Tree View Filtered by State 'overdue') -->
+    <record id="action_overdue_loans" model="ir.actions.act_window">
+        <field name="name">Overdue Loans</field>
+        <field name="res_model">library.loan</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('state','=','overdue')]</field>
+    </record>
+
+</odoo>

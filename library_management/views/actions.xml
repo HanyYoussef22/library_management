@@ -1,0 +1,38 @@
+<odoo>
+    <!-- Action for Book Borrow Wizard -->
+    <record id="action_book_borrow_wizard" model="ir.actions.act_window">
+        <field name="name">Borrow Book</field>
+        <field name="res_model">library.book.borrow.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="context">{'default_book_id': active_id}</field>
+    </record>
+
+
+    <!-- Action for Member Loan History Wizard -->
+    <record id="action_member_loan_history_wizard" model="ir.actions.act_window">
+        <field name="name">Loan History</field>
+        <field name="res_model">library.member.loan.history.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="context">{'default_partner_id': active_id}</field>
+    </record>
+
+
+
+<!-- actions.xml -->
+
+<record id="action_return_book_wizard" model="ir.actions.act_window">
+  <field name="name">Return Book</field>
+  <field name="res_model">library.return.book.wizard</field>
+  <field name="view_mode">form</field>
+  <field name="target">new</field>
+  <field name="context">{'default_loan_id': active_id}</field>
+</record>
+
+
+
+
+
+
+</odoo>
