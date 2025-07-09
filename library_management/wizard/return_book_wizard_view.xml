@@ -1,0 +1,19 @@
+<!-- return_book_wizard_view.xml -->
+
+<odoo>
+  <record id="view_return_book_wizard_form" model="ir.ui.view">
+    <field name="name">return.book.wizard.form</field>
+    <field name="model">library.return.book.wizard</field>
+    <field name="arch" type="xml">
+      <form string="Confirm Return">
+        <group>
+          <field name="loan_id" readonly="1"/>
+        </group>
+        <footer>
+          <button name="action_confirm_return" type="object" string="Confirm" class="btn-primary"/>
+          <button string="Cancel" class="btn-secondary" special="cancel"/>
+        </footer>
+      </form>
+    </field>
+  </record>
+</odoo>
