@@ -29,53 +29,8 @@ A complete custom module for managing a digital library system, built using **Od
 ``
 Project
 
-odoo17 D:\odoo\odoo17
-    ├── custom
-    ├── library_management
-    │   ├── data
-    │   │   └── scheduled_actions.xml
-    │   ├── models
-    │   │   ├── __init__.py
-    │   │   ├── book.py
-    │   │   ├── loan.py
-    │   │   └── partner.py
-    │   ├── reports
-    │   │   ├── library_loan_report.xml
-    │   │   └── report_library_loan_template.x
-    │   ├── security
-    │   │   ├── ir.model.access.csv
-    │   │   ├── library_groups.xml
-    │   │   ├── library_security.xml
-    │   │   └── loan_rules.xml
-    │   ├── views
-    │   │   ├── actions.xml
-    │   │   ├── book_views.xml
-    │   │   ├── dashboard_views.xml
-    │   │   ├── loan_views.xml
-    │   │   ├── menu.xml
-    │   │   ├── res_partner_view_inherit.xml
-    │   │   └── wizard_views.xml
-    │   ├── wizard
-    │   │   ├── book_borrow_wizard_view.xml
-    │   │   └── return_book_wizard_view.xml
-    │   ├── wizards
-    │   │   ├── __init__.py
-    │   │   ├── book_borrow_wizard.py
-    │   │   ├── member_loan_history_wizard.p
-    │   │   └── return_book_wizard.py
-    │   ├── __init__.py
-    │   └── __manifest__.py
-    ├── odoo
-    ├── odoo-conf
-    │   └── odoo17c.conf
-    ├── odoo17-venv (Python Virtual Environment)
-    │   ├── Include
-    │   ├── Lib
-    │   ├── Scripts
-    │   ├── share
-    │   └── pyvenv.cfg
-    ├── External Libraries
-    └── Scratches and Consoles
+![image](https://github.com/user-attachments/assets/e7c12bb4-aba2-4e3f-993c-8c490e73345f)
+
 ``
 
 
@@ -162,3 +117,21 @@ Add the following screenshots to the `/screenshots` folder and link them here:
  
 📸 Screenshots
 ![Screenshot 2025-07-09 210632](https://github.com/user-attachments/assets/990564b2-693a-40d9-839a-869e5e5918ff)
+![Screenshot 2025-07-09 210721](https://github.com/user-attachments/assets/6d5e22bf-e3c4-45b1-b49a-e3f79811e5d4)
+![Screenshot 2025-07-09 210818](https://github.com/user-attachments/assets/bbbb0867-b05a-4667-bce6-6fbc1be6537c)
+![Screenshot 2025-07-09 210841](https://github.com/user-attachments/assets/fb196e29-ba25-4546-8a5f-23601d96d4b7)
+![Screenshot 2025-07-09 210914](https://github.com/user-attachments/assets/05c34990-449a-4fb7-a60b-380143a288f9)
+![Screenshot 2025-07-09 210938](https://github.com/user-attachments/assets/c02607b5-4573-41c1-8f1b-f464afb113df)
+![Screenshot 2025-07-09 211252](https://github.com/user-attachments/assets/904207da-30fe-4a7b-9738-f6c37c5a39cc)
+![Screenshot 2025-07-09 211337](https://github.com/user-attachments/assets/875d8fea-042c-4990-b996-0090d43f679a)
+![Screenshot 2025-07-09 211845](https://github.com/user-attachments/assets/73d19a36-6e26-4b85-9da7-a4e89f540ee8)
+![Screenshot 2025-07-09 211909](https://github.com/user-attachments/assets/e29f4b4c-1bde-4719-a343-9740aeea2490)
+![Screenshot 2025-07-09 211036](https://github.com/user-attachments/assets/a7a6503e-5396-4da8-b843-4f68a6857360)
+![Screenshot 2025-07-09 211057](https://github.com/user-attachments/assets/00892243-c028-4631-beca-4b62bc114246)
+
+
+
+
+
+
+
